@@ -28,6 +28,8 @@ func AddKernelCommands(root *cobra.Command) {
     root.AddCommand(initCmdCommand())
     // middleware
     root.AddCommand(initMiddlewareCommand())
+    // new
+    root.AddCommand(initNewCommand())
 
 	//	root.AddCommand(deployCommand)
 	//
