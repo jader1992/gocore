@@ -6,7 +6,7 @@ import (
 	"github.com/jader1992/gocore/framework/contract"
 )
 
-// helpCommand show current envionment
+// DemoCommand show current environment
 var DemoCommand = &cobra.Command{
 	Use:   "demo",
 	Short: "demo for framework",

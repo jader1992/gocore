@@ -37,8 +37,8 @@ type GocoreContainer struct {
 	lock sync.RWMutex
 }
 
-// NewHadeContainer 创建一个服务容器
-func NewHadeContainer() *GocoreContainer {
+// NewGocoreContainer 创建一个服务容器
+func NewGocoreContainer() *GocoreContainer {
 	return &GocoreContainer{
 		providers: map[string]ServiceProvider{},
 		instances: map[string]interface{}{},

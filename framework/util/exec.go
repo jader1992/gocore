@@ -14,13 +14,15 @@ func GetExecDirectory() string {
 	return ""
 }
 
-// 检查协程是否存在
+// CheckProcessExist 检查协程是否存在
 func CheckProcessExist(pid int) bool {
+    // 查询这个pid
 	process, err := os.FindProcess(pid)
 	if err != nil {
 		return false
 	}
 
+    // 给进程发送signal 0, 如果返回nil，代表进程存在, 否则进程不存在 [类似ping]
 	err = process.Signal(syscall.Signal(0))
 	if err != nil {
 		return false

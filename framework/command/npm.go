@@ -19,7 +19,7 @@ var npmCommand = &cobra.Command{
 		cmd := exec.Command(path, args...)
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
-		cmd.Run()
+		_ = cmd.Run()
 		return nil
 	},
 }

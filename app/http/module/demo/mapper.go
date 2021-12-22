@@ -6,7 +6,7 @@ import (
 
 // UserModelsToUserDTOs model => dto
 func UserModelsToUserDTOs(models []UserModel) []UserDto {
-	ret := []UserDto{}
+    var ret []UserDto
 	for _, model := range models {
 		t := UserDto{
 			ID:   model.UserId,
@@ -19,7 +19,7 @@ func UserModelsToUserDTOs(models []UserModel) []UserDto {
 
 // StudentsToUsersDTOs Student => dto
 func StudentsToUsersDTOs(students []demoService.Student) []UserDto {
-	ret := []UserDto{}
+    var ret []UserDto
 
 	for _, student := range students {
 		t := UserDto{

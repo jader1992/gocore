@@ -2,8 +2,8 @@ package console
 
 import (
 	"github.com/jader1992/gocore/app/console/command/demo"
-    "github.com/jader1992/gocore/app/console/command/foo"
-    "github.com/jader1992/gocore/framework"
+	"github.com/jader1992/gocore/app/console/command/foo"
+	"github.com/jader1992/gocore/framework"
 	"github.com/jader1992/gocore/framework/cobra"
 	"github.com/jader1992/gocore/framework/command"
 	"time"
@@ -39,13 +39,13 @@ func RunCommand(container framework.Container) error {
 
 func AddAppCommand(rootCommand *cobra.Command) {
 	// demo 例子
-	//rootCommand.AddCommand(demo.InitFoo())
+	// rootCommand.AddCommand(demo.InitFoo())
 
-    rootCommand.AddCommand(foo.FooCommand)
+	rootCommand.AddCommand(foo.FooCommand)
 
 	// 定时任务
-	// rootCommand.AddCronCommand("* * * * * *", demo.InitFoo())
+	// rootCommand.AddCronCommand("* * * * * *", demo.initFoo())
 
 	// 定时任务，调度的服务名称为init_func_for_test，每个节点每5s调用一次Foo命令，抢占到了调度任务的节点将抢占锁持续挂载2s才释放
-	rootCommand.AddDistributedCronCommand("foo_func_for_test", "*/5 * * * * *", demo.FooCommand, 2 * time.Second)
+	rootCommand.AddDistributedCronCommand("foo_func_for_test", "*/5 * * * * *", demo.FooCommand, 2*time.Second)
 }

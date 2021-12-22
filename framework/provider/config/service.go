@@ -68,7 +68,7 @@ func (conf *GocoreConfig) GetTime(key string) time.Time {
 	return cast.ToTime(conf.find(key))
 }
 
-// GetString get string typen
+// GetString get string type
 func (conf *GocoreConfig) GetString(key string) string {
 	return cast.ToString(conf.find(key))
 }
@@ -100,7 +100,14 @@ func (conf *GocoreConfig) GetStringMapStringSlice(key string) map[string][]strin
 
 // Load a config to a struct, val should be an pointer
 func (conf *GocoreConfig) Load(key string, val interface{}) error {
-	return mapstructure.Decode(conf.find(key), val)
+	decoder, err := mapstructure.NewDecoder(&mapstructure.DecoderConfig{
+		TagName: "yaml", // 默认的是：mapstructure
+		Result:  val,
+	})
+	if err != nil {
+		return err
+	}
+	return decoder.Decode(conf.find(key)) // 此方法是 func Decode(input interface{}, output interface{}) error 具体实现
 }
 
 func (conf *GocoreConfig) loadConfigFile(folder string, file string) error {
@@ -121,7 +128,7 @@ func (conf *GocoreConfig) loadConfigFile(folder string, file string) error {
 		// 直接对文本做文件替换
 		bf = replace(bf, conf.envMaps)
 
-		// 解析对应文件
+		// 解析对应文件 【使用mapstructure.Decode的前提需要将内容转成map[string]interface{}】
 		c := map[string]interface{}{}
 		if err := yaml.Unmarshal(bf, &c); err != nil {
 			return err
@@ -177,10 +184,10 @@ func NewGocoreConfig(params ...interface{}) (interface{}, error) {
 		lock:     sync.RWMutex{},
 	}
 
-    // 检查文件夹是否存在
-    if _, err := os.Stat(envFolder); os.IsNotExist(err) {
-        return gocoreConf, nil
-    }
+	// 检查文件夹是否存在
+	if _, err := os.Stat(envFolder); os.IsNotExist(err) {
+		return gocoreConf, nil
+	}
 
 	//  读取每个文件
 	files, err := ioutil.ReadDir(envFolder)

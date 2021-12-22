@@ -27,7 +27,7 @@ var cmdCommand = &cobra.Command{
 	Short: "控制台命令相关",
 	RunE: func(c *cobra.Command, args []string) error {
 		if len(args) == 0 {
-			c.Help()
+			_ = c.Help()
 		}
 		return nil
 	},
@@ -39,7 +39,7 @@ var cmdListCommand = &cobra.Command{
 	Short: "列出所有控制台命令",
 	RunE: func(c *cobra.Command, args []string) error {
 		cmds := c.Root().Commands() // 获取所有的子命令
-		ps := [][]string{}
+		var ps [][]string
 		for _, cmd := range cmds {
 			line := []string{cmd.Name(), cmd.Short}
 			ps = append(ps, line)

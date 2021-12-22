@@ -24,8 +24,10 @@ type App interface {
 	RuntimeFolder() string
 	// TestFolder 存放测试所需要的信息
 	TestFolder() string
+    // DeployFolder 存储部署的时候创建的文件夹
+    DeployFolder() string
 
-  AppFolder() string // 定义业务代码所在的目录，用于监控文件变更使用
+    AppFolder() string // 定义业务代码所在的目录，用于监控文件变更使用
 
 	// LoadAppConfig 加载新的AppConfig，key为对应的函数转为小写下划线，比如ConfigFolder => config_folder
 	LoadAppConfig(kv map[string]string)

@@ -54,7 +54,7 @@ func NewCoreEnv(params ...interface{}) (interface{}, error) {
 	// 实例化
 	gocoreEnv := &GocoreEnv{
 		folder: folder,
-		maps:   map[string]string{"APP_ENV": contract.EnvDevelopment},
+		maps:   map[string]string{"APP_ENV": contract.EnvDevelopment}, // 默认是：development
 	}
 
 	// 解析folder/.env文件

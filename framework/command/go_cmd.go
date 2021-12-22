@@ -13,13 +13,13 @@ var goCommand = &cobra.Command{
 	RunE: func(c *cobra.Command, args []string) error {
 		path, err := exec.LookPath("go")
 		if err != nil {
-			log.Fatalln("hade go: should install go in your PATH")
+			log.Fatalln("core go: should install go in your PATH")
 		}
 
 		cmd := exec.Command(path, args...)
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
-		cmd.Run()
+		_ = cmd.Run()
 		return nil
 	},
 }

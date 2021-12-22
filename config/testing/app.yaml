@@ -1,0 +1,21 @@
+swagger: true
+
+close_wait: 5
+
+path:
+#  log_folder: "/Users/jade/Desktop/go/gocore/storage/log/"
+#  runtime_folder: "Users/jade/Desktop/go/gocore/storage/runtime/"
+#  log: ""
+#  pid: ""
+#  cache: ""
+
+dev: # 调试模式
+  port: 8070 # 调试模式最终监听的端口，默认为8070
+  backend: # 后端调试模式
+    refresh_time: 3 #  调试模式后端更新时间，如果文件变更，等待3s才进行一次更新，能让频繁保存变更更为顺畅, 默认1s
+    port: 8072 # 后端监听端口默认 8072
+    monitor_folder: "" # 监听文件件，为空或者不填写，则为默认AppFolder
+    cmd: "./gocore" # 后端执行的命令
+  fronted: # 前段调试模式设置
+    port: 8071 # 前端监听端口，默认8071
+

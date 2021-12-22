@@ -1,0 +1,61 @@
+basePath: /
+definitions:
+  demo.UserDto:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
+info:
+  contact:
+    email: 1249200310@qq.com
+    name: zero
+  description: gocore测试
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://github.com/swaggo/swag
+  title: jader1992
+  version: "1.1"
+paths:
+  /demo/demo:
+    get:
+      description: 获取所有用户
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 获取所有用户
+      tags:
+      - demo
+  /demo/demo2:
+    get:
+      description: 获取所有学生
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              items:
+                $ref: '#/definitions/demo.UserDto'
+              type: array
+            type: array
+      summary: 获取所有学生
+      tags:
+      - demo
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+  BasicAuth:
+    type: basic
+swagger: "2.0"
+x-extension-openapi:
+  example: value on a json format

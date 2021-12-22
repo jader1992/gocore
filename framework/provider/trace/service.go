@@ -60,9 +60,9 @@ func (t *GocoreTraceService) NewTrace() *contract.TraceContext {
 
 	tc := &contract.TraceContext{
 		TraceID:    traceID,
-		ParantID:   "",
+		ParentID:   "",
 		SpanID:     spanID,
-		CspanID:    "",
+		CSpanID:    "",
 		Annotation: map[string]string{},
 	}
 	return tc
@@ -78,9 +78,9 @@ func (t *GocoreTraceService) StartSpan(tc *contract.TraceContext) *contract.Trac
 
 	childSpan := &contract.TraceContext{
 		TraceID:  tc.TraceID,
-		ParantID: "",
+		ParentID: "",
 		SpanID:   tc.SpanID,
-		CspanID:  childSpanId,
+		CSpanID:  childSpanId,
 		Annotation: map[string]string{
 			contract.TraceKeyTime: time.Now().String(),
 		},
@@ -91,9 +91,9 @@ func (t *GocoreTraceService) StartSpan(tc *contract.TraceContext) *contract.Trac
 func (t *GocoreTraceService) ExtractHTTP(req *http.Request) *contract.TraceContext {
 	tc := &contract.TraceContext{}
 	tc.TraceID = req.Header.Get(contract.TraceKeyTraceID)
-	tc.ParantID = req.Header.Get(contract.TraceKeyParentID)
+	tc.ParentID = req.Header.Get(contract.TraceKeyParentID)
 	tc.SpanID = req.Header.Get(contract.TraceKeySpanID)
-	tc.CspanID = ""
+	tc.CSpanID = ""
 
 	if tc.TraceID == "" {
 		tc.TraceID = t.idService.NewID()
@@ -109,8 +109,8 @@ func (t *GocoreTraceService) ExtractHTTP(req *http.Request) *contract.TraceConte
 func (t *GocoreTraceService) InjectHTTP(req *http.Request, tc *contract.TraceContext) *http.Request {
 	req.Header.Set(contract.TraceKeyTraceID, tc.TraceID)
 	req.Header.Set(contract.TraceKeySpanID, tc.SpanID)
-	req.Header.Set(contract.TraceKeyCspanID, tc.CspanID)
-	req.Header.Set(contract.TraceKeyParentID, tc.ParantID)
+	req.Header.Set(contract.TraceKeyCSpanID, tc.CSpanID)
+	req.Header.Set(contract.TraceKeyParentID, tc.ParentID)
 	return req
 }
 
@@ -122,8 +122,8 @@ func (t *GocoreTraceService) ToMap(tc *contract.TraceContext) map[string]string 
 
 	m[contract.TraceKeyTraceID] = tc.TraceID
 	m[contract.TraceKeySpanID] = tc.SpanID
-	m[contract.TraceKeyCspanID] = tc.CspanID
-	m[contract.TraceKeyParentID] = tc.ParantID
+	m[contract.TraceKeyCSpanID] = tc.CSpanID
+	m[contract.TraceKeyParentID] = tc.ParentID
 
 	if tc.Annotation != nil {
 		for k, v := range tc.Annotation {

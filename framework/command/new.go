@@ -163,7 +163,7 @@ var newCommand = &cobra.Command{
 		_ = os.RemoveAll(path.Join(folder, "framework"))
 		fmt.Println("删除framework目录")
 
-		filepath.Walk(folder, func(path string, info fs.FileInfo, err error) error {
+		_ = filepath.Walk(folder, func(path string, info fs.FileInfo, err error) error {
 			if info.IsDir() {
 				return nil
 			}

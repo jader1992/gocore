@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>调试模式 | gocore框架</title>
+    <meta name="generator" content="VuePress 1.8.3">
+    <link rel="icon" href="/v1.0/assets/img/head.png">
+    <meta name="description" content="一个支持前后端开发的基于协议的框架">
+    
+    <link rel="preload" href="/v1.0/assets/css/0.styles.017ed193.css" as="style"><link rel="preload" href="/v1.0/assets/js/app.bbdd7f77.js" as="script"><link rel="preload" href="/v1.0/assets/js/2.58ac874f.js" as="script"><link rel="preload" href="/v1.0/assets/js/13.5107ef78.js" as="script"><link rel="prefetch" href="/v1.0/assets/js/10.167b731d.js"><link rel="prefetch" href="/v1.0/assets/js/11.9cf69ccb.js"><link rel="prefetch" href="/v1.0/assets/js/12.17dc9541.js"><link rel="prefetch" href="/v1.0/assets/js/14.25e58dc1.js"><link rel="prefetch" href="/v1.0/assets/js/15.6f15c168.js"><link rel="prefetch" href="/v1.0/assets/js/16.4c54fd40.js"><link rel="prefetch" href="/v1.0/assets/js/17.44f1e2e3.js"><link rel="prefetch" href="/v1.0/assets/js/18.393b57eb.js"><link rel="prefetch" href="/v1.0/assets/js/19.838a1940.js"><link rel="prefetch" href="/v1.0/assets/js/20.55a50cb6.js"><link rel="prefetch" href="/v1.0/assets/js/21.078b337d.js"><link rel="prefetch" href="/v1.0/assets/js/22.26f69ff6.js"><link rel="prefetch" href="/v1.0/assets/js/23.cb5abd15.js"><link rel="prefetch" href="/v1.0/assets/js/24.3ba2234e.js"><link rel="prefetch" href="/v1.0/assets/js/25.c47ff272.js"><link rel="prefetch" href="/v1.0/assets/js/26.3e6ffa3a.js"><link rel="prefetch" href="/v1.0/assets/js/3.caa07198.js"><link rel="prefetch" href="/v1.0/assets/js/4.e506762c.js"><link rel="prefetch" href="/v1.0/assets/js/5.f2d985ae.js"><link rel="prefetch" href="/v1.0/assets/js/6.25b4f781.js"><link rel="prefetch" href="/v1.0/assets/js/7.87a34527.js"><link rel="prefetch" href="/v1.0/assets/js/8.03c27778.js"><link rel="prefetch" href="/v1.0/assets/js/9.61539cea.js">
+    <link rel="stylesheet" href="/v1.0/assets/css/0.styles.017ed193.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/v1.0/" class="home-link router-link-active"><!----> <span class="site-name">gocore框架</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/v1.0/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/v1.0/guide/" class="nav-link router-link-active">
+  使用文档
+</a></div><div class="nav-item"><a href="/v1.0/provider/" class="nav-link">
+  服务提供者
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="github" class="dropdown-title"><span class="title">github</span> <span class="arrow down"></span></button> <button type="button" aria-label="github" class="mobile-dropdown-title"><span class="title">github</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/jader1992/gocore" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gocore
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/v1.0/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/v1.0/guide/" class="nav-link router-link-active">
+  使用文档
+</a></div><div class="nav-item"><a href="/v1.0/provider/" class="nav-link">
+  服务提供者
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="github" class="dropdown-title"><span class="title">github</span> <span class="arrow down"></span></button> <button type="button" aria-label="github" class="mobile-dropdown-title"><span class="title">github</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/jader1992/gocore" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gocore
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/v1.0/guide/introduce.html" class="sidebar-link">介绍</a></li><li><a href="/v1.0/guide/install.html" class="sidebar-link">安装</a></li><li><a href="/v1.0/guide/build.html" class="sidebar-link">编译</a></li><li><a href="/v1.0/guide/structure.html" class="sidebar-link">目录结构</a></li><li><a href="/v1.0/guide/app.html" class="sidebar-link">运行</a></li><li><a href="/v1.0/guide/env.html" class="sidebar-link">环境变量</a></li><li><a href="/v1.0/guide/dev.html" aria-current="page" class="active sidebar-link">调试模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/v1.0/guide/dev.html#命令" class="sidebar-link">命令</a></li><li class="sidebar-sub-header"><a href="/v1.0/guide/dev.html#调试前端" class="sidebar-link">调试前端</a></li><li class="sidebar-sub-header"><a href="/v1.0/guide/dev.html#调试后端" class="sidebar-link">调试后端</a></li></ul></li><li><a href="/v1.0/guide/command.html" class="sidebar-link">命令</a></li><li><a href="/v1.0/guide/cron.html" class="sidebar-link">定时任务</a></li><li><a href="/v1.0/guide/middleware.html" class="sidebar-link">中间件</a></li><li><a href="/v1.0/guide/swagger.html" class="sidebar-link">swagger</a></li><li><a href="/v1.0/guide/provider.html" class="sidebar-link">服务提供者</a></li><li><a href="/v1.0/guide/todo.html" class="sidebar-link">待做事项</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="调试模式"><a href="#调试模式" class="header-anchor">#</a> 调试模式</h1> <h2 id="命令"><a href="#命令" class="header-anchor">#</a> 命令</h2> <p>gocore 框架自带调试模式，不管是前端还是后端，都可以启动调试模式，边修改代码，边编译运行服务。</p> <p>对应的命令为 <code>./gocore dev</code></p> <div class="language- extra-class"><pre class="language-text"><code>[~/Documents/workspace/gocore_workspace]$ ./gocore dev
+dev mode
+
+Usage:
+  gocore dev [flags]
+  gocore dev [command]
+
+Available Commands:
+  all         dev mode from both frontend and backend
+  backend     dev mode for backend, hot reload
+  frontend    dev mode for frontend
+
+Flags:
+  -h, --help   help for dev
+
+Use &quot;gocore dev [command] --help&quot; for more information about a command.
+</code></pre></div><ul><li>调试前端</li> <li>调试后端</li> <li>同时调试</li></ul> <h2 id="调试前端"><a href="#调试前端" class="header-anchor">#</a> 调试前端</h2> <p>使用命令 <code>./gocore dev frontend</code></p> <p>要求当前编译机器安装 npm 软件，并且当前项目已经运行了 npm install，安装完成前端依赖。</p> <div class="language- extra-class"><pre class="language-text"><code>[~/Documents/workspace/gocore_workspace]$ ./gocore dev frontend
+
+&gt; gocore@0.1.0 serve /Users/Documents/workspace/gocore_workspace
+&gt; vue-cli-service serve
+
+ INFO  Starting development server...
+98% after emitting
+
+ DONE  Compiled successfully in 2589ms                                                                                                     下午6:07:06
+
+
+  App running at:
+  - Local:   http://localhost:8080
+  - Network: http://172.24.34.34:8080
+
+  Note that the development build is not optimized.
+  To create a production build, run npm run build.
+</code></pre></div><p>实际上是调用 <code>npm run dev</code> 来调试前端</p> <h2 id="调试后端"><a href="#调试后端" class="header-anchor">#</a> 调试后端</h2> <p>使用命令 <code>./gocore dev backend</code></p> <p>要求当前编译机器安装 go 软件，版本 &gt; 1.3。</p> <div class="language- extra-class"><pre class="language-text"><code>[~/Documents/workspace/gocore_workspace]$  ./gocore dev backend
+./gocore dev backend
+build success please run ./gocore direct
+backend server: http://127.0.0.1:15060
+proxy backend server: http://0.0.0.0:8073
+[PID] 29034
+app serve url: http://127.0.0.1:15060
+</code></pre></div><p>可以通过 proxy backend server 地址进行访问：</p> <p><code>http://0.0.0.0:8073/demo/demo</code></p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>后端调试默认是最后一次操作后3秒启动后端编译启动命令。</p> <p>gocore 也允许通过配置修改这个等待时间。</p> <p>可以配置 <code>development/app.yaml</code> 里面的 <code>dev_fresh</code> 参数修改这个等待时间。</p></div> <h1 id="同时调试"><a href="#同时调试" class="header-anchor">#</a> 同时调试</h1> <p>也可以选择同时调试，这个时候会同时运行调试前端和调试后端的程序</p> <div class="language- extra-class"><pre class="language-text"><code>[~/Documents/workspace/gocore_workspace]$ ./gocore dev all
+
+&gt; gocore@0.1.0 serve /Users/Documents/workspace/gocore_workspace
+&gt; vue-cli-service serve
+
+ INFO  Starting development server...
+build success please run ./gocore direct
+backend server: http://127.0.0.1:19866
+proxy backend server: http://0.0.0.0:8073
+proxy frontend server: http://0.0.0.0:8073/dist/#/
+[PID] 29761
+app serve url: http://127.0.0.1:19866
+98% after emitting
+
+ DONE  Compiled successfully in 1421ms                                                                                                     下午6:19:51
+
+
+  App running at:
+  - Local:   http://localhost:19073
+  - Network: http://172.24.34.34:19073
+
+  Note that the development build is not optimized.
+  To create a production build, run npm run build.
+
+[GIN] 2020/09/16 - 18:20:26 | 200 |     134.079µs |       127.0.0.1 | GET      /demo/demo
+
+</code></pre></div><p>前端和后端的访问地址分别为：</p> <div class="language- extra-class"><pre class="language-text"><code>proxy backend server: http://0.0.0.0:8073
+proxy frontend server: http://0.0.0.0:8073/dist/#/
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/v1.0/guide/env.html" class="prev">
+        环境变量
+      </a></span> <span class="next"><a href="/v1.0/guide/command.html">
+        命令
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/v1.0/assets/js/app.bbdd7f77.js" defer></script><script src="/v1.0/assets/js/2.58ac874f.js" defer></script><script src="/v1.0/assets/js/13.5107ef78.js" defer></script>
+  </body>
+</html>

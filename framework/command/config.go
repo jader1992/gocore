@@ -19,7 +19,7 @@ var configCommand = &cobra.Command{
 	Short: "获取配置相关信息",
 	RunE: func(c *cobra.Command, args []string) error {
 		if len(args) == 0 {
-			c.Help()
+			_ = c.Help()
 		}
 		return nil
 	},

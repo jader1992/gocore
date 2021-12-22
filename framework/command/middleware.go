@@ -33,7 +33,7 @@ var middlewareCommand = &cobra.Command{
 	Short: "中间件相关命令",
 	RunE: func(c *cobra.Command, args []string) error {
 		if len(args) == 0 {
-			c.Help()
+			_ = c.Help()
 		}
 		return nil
 	},
@@ -106,20 +106,20 @@ var middlewareMigrateCommand = &cobra.Command{
 		// step3: 删除不必要的go.mod, go.sum, .git
 		repoFolder := path.Join(middlewarePath, repo)
 
-		repoFolderWithGomod := path.Join(repoFolder, "go.mod") // 删除go.mod
-		fmt.Println("remove " + repoFolderWithGomod)
-		os.Remove(repoFolderWithGomod)
+		repoFolderWithGoMod := path.Join(repoFolder, "go.mod") // 删除go.mod
+		fmt.Println("remove " + repoFolderWithGoMod)
+		_ = os.Remove(repoFolderWithGoMod)
 
-		repoFolderWithGosum := path.Join(repoFolder, "go.sum") // 删除go.sum
-		fmt.Println("remove " + repoFolderWithGosum)
-		os.Remove(repoFolderWithGosum)
+		repoFolderWithGoSum := path.Join(repoFolder, "go.sum") // 删除go.sum
+		fmt.Println("remove " + repoFolderWithGoSum)
+		_ = os.Remove(repoFolderWithGoSum)
 
 		repoFolderWithGit := path.Join(repoFolder, ".git") // 删除.git
 		fmt.Println("remove " + repoFolderWithGit)
-		os.Remove(repoFolderWithGit)
+		_ = os.Remove(repoFolderWithGit)
 
 		// step4: 替换关键词
-		filepath.Walk(repoFolder, func(path string, info fs.FileInfo, err error) error {
+		_ = filepath.Walk(repoFolder, func(path string, info fs.FileInfo, err error) error {
 			if info.IsDir() { // 跳过文件夹
 				return nil
 			}
@@ -203,7 +203,7 @@ var middlewareCreateCommand = &cobra.Command{
 			return err
 		}
 
-		funcs := template.FuncMap{"title": strings.Title}
+		func1 := template.FuncMap{"title": strings.Title}
 		{
 			// 创建
 			file := filepath.Join(pFolder, folder, "middleware.go")
@@ -212,7 +212,7 @@ var middlewareCreateCommand = &cobra.Command{
 				return errors.Cause(err)
 			}
 
-			t := template.Must(template.New("middleware").Funcs(funcs).Parse(middlewareTmp))
+			t := template.Must(template.New("middleware").Funcs(func1).Parse(middlewareTmp))
 			if err := t.Execute(f, name); err != nil {
 				return errors.Cause(err)
 			}

@@ -1,0 +1,19 @@
+connections:
+    - ssh.web-01
+    - ssh.web-02
+
+remote_path: "/home/guyi/gocore"
+
+frontend:
+    pre_action:
+        - "pwd"
+    post_action:
+        - "pwd"
+
+backend:
+    goos: linux
+    goarch: amd64
+    pre_action:
+        - "pwd"
+    post_action:
+        - "./gocore serve restart"

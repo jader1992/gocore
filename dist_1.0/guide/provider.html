@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>服务提供者 | gocore框架</title>
+    <meta name="generator" content="VuePress 1.8.3">
+    <link rel="icon" href="/v1.0/assets/img/head.png">
+    <meta name="description" content="一个支持前后端开发的基于协议的框架">
+    
+    <link rel="preload" href="/v1.0/assets/css/0.styles.017ed193.css" as="style"><link rel="preload" href="/v1.0/assets/js/app.bbdd7f77.js" as="script"><link rel="preload" href="/v1.0/assets/js/2.58ac874f.js" as="script"><link rel="preload" href="/v1.0/assets/js/18.393b57eb.js" as="script"><link rel="prefetch" href="/v1.0/assets/js/10.167b731d.js"><link rel="prefetch" href="/v1.0/assets/js/11.9cf69ccb.js"><link rel="prefetch" href="/v1.0/assets/js/12.17dc9541.js"><link rel="prefetch" href="/v1.0/assets/js/13.5107ef78.js"><link rel="prefetch" href="/v1.0/assets/js/14.25e58dc1.js"><link rel="prefetch" href="/v1.0/assets/js/15.6f15c168.js"><link rel="prefetch" href="/v1.0/assets/js/16.4c54fd40.js"><link rel="prefetch" href="/v1.0/assets/js/17.44f1e2e3.js"><link rel="prefetch" href="/v1.0/assets/js/19.838a1940.js"><link rel="prefetch" href="/v1.0/assets/js/20.55a50cb6.js"><link rel="prefetch" href="/v1.0/assets/js/21.078b337d.js"><link rel="prefetch" href="/v1.0/assets/js/22.26f69ff6.js"><link rel="prefetch" href="/v1.0/assets/js/23.cb5abd15.js"><link rel="prefetch" href="/v1.0/assets/js/24.3ba2234e.js"><link rel="prefetch" href="/v1.0/assets/js/25.c47ff272.js"><link rel="prefetch" href="/v1.0/assets/js/26.3e6ffa3a.js"><link rel="prefetch" href="/v1.0/assets/js/3.caa07198.js"><link rel="prefetch" href="/v1.0/assets/js/4.e506762c.js"><link rel="prefetch" href="/v1.0/assets/js/5.f2d985ae.js"><link rel="prefetch" href="/v1.0/assets/js/6.25b4f781.js"><link rel="prefetch" href="/v1.0/assets/js/7.87a34527.js"><link rel="prefetch" href="/v1.0/assets/js/8.03c27778.js"><link rel="prefetch" href="/v1.0/assets/js/9.61539cea.js">
+    <link rel="stylesheet" href="/v1.0/assets/css/0.styles.017ed193.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/v1.0/" class="home-link router-link-active"><!----> <span class="site-name">gocore框架</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/v1.0/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/v1.0/guide/" class="nav-link router-link-active">
+  使用文档
+</a></div><div class="nav-item"><a href="/v1.0/provider/" class="nav-link">
+  服务提供者
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="github" class="dropdown-title"><span class="title">github</span> <span class="arrow down"></span></button> <button type="button" aria-label="github" class="mobile-dropdown-title"><span class="title">github</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/jader1992/gocore" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gocore
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/v1.0/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/v1.0/guide/" class="nav-link router-link-active">
+  使用文档
+</a></div><div class="nav-item"><a href="/v1.0/provider/" class="nav-link">
+  服务提供者
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="github" class="dropdown-title"><span class="title">github</span> <span class="arrow down"></span></button> <button type="button" aria-label="github" class="mobile-dropdown-title"><span class="title">github</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/jader1992/gocore" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gocore
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/v1.0/guide/introduce.html" class="sidebar-link">介绍</a></li><li><a href="/v1.0/guide/install.html" class="sidebar-link">安装</a></li><li><a href="/v1.0/guide/build.html" class="sidebar-link">编译</a></li><li><a href="/v1.0/guide/structure.html" class="sidebar-link">目录结构</a></li><li><a href="/v1.0/guide/app.html" class="sidebar-link">运行</a></li><li><a href="/v1.0/guide/env.html" class="sidebar-link">环境变量</a></li><li><a href="/v1.0/guide/dev.html" class="sidebar-link">调试模式</a></li><li><a href="/v1.0/guide/command.html" class="sidebar-link">命令</a></li><li><a href="/v1.0/guide/cron.html" class="sidebar-link">定时任务</a></li><li><a href="/v1.0/guide/middleware.html" class="sidebar-link">中间件</a></li><li><a href="/v1.0/guide/swagger.html" class="sidebar-link">swagger</a></li><li><a href="/v1.0/guide/provider.html" aria-current="page" class="active sidebar-link">服务提供者</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/v1.0/guide/provider.html#指南" class="sidebar-link">指南</a></li><li class="sidebar-sub-header"><a href="/v1.0/guide/provider.html#创建" class="sidebar-link">创建</a></li><li class="sidebar-sub-header"><a href="/v1.0/guide/provider.html#自定义" class="sidebar-link">自定义</a></li><li class="sidebar-sub-header"><a href="/v1.0/guide/provider.html#注入" class="sidebar-link">注入</a></li><li class="sidebar-sub-header"><a href="/v1.0/guide/provider.html#获取" class="sidebar-link">获取</a></li><li class="sidebar-sub-header"><a href="/v1.0/guide/provider.html#gocore-provider" class="sidebar-link">gocore provider</a></li></ul></li><li><a href="/v1.0/guide/todo.html" class="sidebar-link">待做事项</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="服务提供者"><a href="#服务提供者" class="header-anchor">#</a> 服务提供者</h1> <h2 id="指南"><a href="#指南" class="header-anchor">#</a> 指南</h2> <p>gocore框架使用ServiceProvider机制来满足协议，通过service Provder提供某个协议服务的具体实现。这样如果开发者对具体的实现协议的服务类的具体实现不满意，则可以很方便的通过切换具体协议的Service Provider来进行具体服务的切换。</p> <p>一个ServiceProvider是一个单独的文件夹，它包含服务提供和服务实现。具体可以参考framework/provider/demo</p> <p>一个SerivceProvider就是一个独立的包，这个包可以作为插件独立地发布和分享。</p> <p>你也可以定义一个无contract的ServiceProvider，其中的Name()需要保证唯一。</p> <h2 id="创建"><a href="#创建" class="header-anchor">#</a> 创建</h2> <p>我们可以使用命令 <code>./gocore provider new</code> 来创建一个新的service provider</p> <div class="language- extra-class"><pre class="language-text"><code>[~/Documents/workspace/gocore_workspace]$ ./gocore provider new
+create a provider
+? please input provider name test
+? please input provider folder(default: provider name):
+create provider success, folder path: /Users/Documents/workspace/gocore_workspace/app/provider/test
+please remember add provider to kernel
+</code></pre></div><p>该命令会在<code>app/provider/</code> 目录下创建一个对应的服务提供者。并且初始化好三个文件： <code>contract.go</code>, <code>provider.go</code>, <code>service.go</code></p> <h2 id="自定义"><a href="#自定义" class="header-anchor">#</a> 自定义</h2> <p>我们需要编写这三个文件：</p> <h3 id="contract-go"><a href="#contract-go" class="header-anchor">#</a> contract.go</h3> <p>contract.go 定义了这个服务提供方提供的协议接口。gocore 框架任务，作为一个业务的服务提供者，定义一个好的协议是最重要的事情。</p> <p>所以 contract.go 中定义了一个 Service 接口，在其中定义各种方法，包含输入参数和返回参数。</p> <div class="language- extra-class"><pre class="language-text"><code>package demo
+
+const DemoKey = &quot;demo&quot;
+
+type IService interface {
+	GetAllStudent() []Student
+}
+
+type Student struct {
+	ID   int
+	Name string
+}
+
+</code></pre></div><p>其中还定义了一个Key， 这个 Key 是全应用唯一的，服务提供者将服务以 Key 关键字注入到容器中。服务使用者使用 Key 关键字获取服务。</p> <h3 id="provider"><a href="#provider" class="header-anchor">#</a> provider</h3> <p>provider.go 提供服务适配的实现，实现一个Provider必须实现对应的五个方法</p> <div class="language- extra-class"><pre class="language-text"><code>package demo
+
+import (
+	&quot;github.com/gogocore/gocore/framework&quot;
+)
+
+type DemoProvider struct {
+	framework.ServiceProvider
+
+	c framework.Container
+}
+
+func (sp *DemoProvider) Name() string {
+	return DemoKey
+}
+
+func (sp *DemoProvider) Register(c framework.Container) framework.NewInstance {
+	return NewService
+}
+
+func (sp *DemoProvider) IsDefer() bool {
+	return false
+}
+
+func (sp *DemoProvider) Params() []interface{} {
+	return []interface{}{sp.c}
+}
+
+func (sp *DemoProvider) Boot(c framework.Container) error {
+	sp.c = c
+	return nil
+}
+</code></pre></div><ul><li>Name() // 指定这个服务提供者提供的服务对应的接口的关键字</li> <li>Register() // 这个服务提供者注册的时候调用的方法，一般是指定初始化服务的函数名</li> <li>IsDefer() // 这个服务是否是使用时候再进行初始化，false为注册的时候直接进行初始化服务</li> <li>Params() // 初始化服务的时候对服务注入什么参数，一般把 container 注入到服务中</li> <li>Boot() // 初始化之前调用的函数，一般设置一些全局的Provider</li></ul> <h3 id="service-go"><a href="#service-go" class="header-anchor">#</a> service.go</h3> <p>service.go提供具体的实现，它至少需要提供一个实例化的方法 <code>NewService(params ...interface{}) (interface{}, error)</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>package demo
+
+import &quot;github.com/gogocore/gocore/framework&quot;
+
+type Service struct {
+	container framework.Container
+}
+
+func NewService(params ...interface{}) (interface{}, error) {
+	container := params[0].(framework.Container)
+	return &amp;Service{container: container}, nil
+}
+
+func (s *Service) GetAllStudent() []Student {
+	return []Student{
+		{
+			ID:   1,
+			Name: &quot;foo&quot;,
+		},
+		{
+			ID:   2,
+			Name: &quot;bar&quot;,
+		},
+	}
+}
+
+</code></pre></div><h2 id="注入"><a href="#注入" class="header-anchor">#</a> 注入</h2> <p>gocore的路由，controller的定义是选择基于gin框架进行扩展的。所有的gin框架的路由，参数获取，验证，context都和gin框架是相同的。唯一不同的是gin的全局路由gin.Engine实现了gocore的容器结构，可以对gin.Engine进行服务提供的注入，且可以从context中获取具体的服务。</p> <p>gocore提供两种服务注入的方法：</p> <ul><li>Bind: 将一个ServiceProvider绑定到容器中，可以控制其是否是单例</li> <li>Singleton: 将一个单例ServiceProvider绑定到容器中</li></ul> <p>建议在文件夹 <code>app/provider/kernel.go</code> 中进行服务注入</p> <div class="language-golang extra-class"><pre class="language-text"><code>func RegisterCustomProvider(c framework.Container) {
+	c.Bind(&amp;demo.DemoProvider{}, true)
+}
+</code></pre></div><p>当然你也可以在某个业务模块路由注册的时候进行服务注入</p> <div class="language-golang extra-class"><pre class="language-text"><code>func Register(r *gin.Engine) error {
+	api := NewDemoApi()
+	r.Container().Singleton(&amp;demoService.DemoProvider{})
+
+	r.GET(&quot;/demo/demo&quot;, api.Demo)
+	r.GET(&quot;/demo/demo2&quot;, api.Demo2)
+	return nil
+}
+</code></pre></div><h2 id="获取"><a href="#获取" class="header-anchor">#</a> 获取</h2> <p>gocore提供了三种服务获取的方法：</p> <ul><li>Make: 根据一个Key获取服务，获取不到获取报错</li> <li>MustMake: 根据一个Key获取服务，获取不到返回空</li> <li>MakeNew: 根据一个Key获取服务，每次获取都实例化，对应的ServiceProvider必须是以非单例形式注入</li></ul> <p>你可以在任意一个可以获取到 container 的地方进行服务的获取。</p> <p>业务模块中:</p> <div class="language- extra-class"><pre class="language-text"><code>func (api *DemoApi) Demo2(c *gin.Context) {
+	demoProvider := c.MustMake(demoService.DemoKey).(demoService.IService)
+	students := demoProvider.GetAllStudent()
+	usersDTO := StudentsToUserDTOs(students)
+	c.JSON(200, usersDTO)
+}
+</code></pre></div><p>命令行中：</p> <div class="language-golang extra-class"><pre class="language-text"><code>var CenterCommand = &amp;cobra.Command{
+	Use:   &quot;direct_center&quot;,
+	Short: &quot;计算区域中心点&quot;,
+	RunE: func(c *cobra.Command, args []string) error {
+		container := util.GetContainer(c.Root())
+		app := container.MustMake(contract.AppKey).(contract.App)
+        return nil
+    }
+</code></pre></div><p>甚至于另外一个服务提供者中：</p> <div class="language-golang extra-class"><pre class="language-text"><code>type Service struct {
+	c framework.Container
+
+	baseURL string
+	userID  string
+	token   string
+	logger  contract.Log
+}
+
+func NewService(params ...interface{}) (interface{}, error) {
+	c := params[0].(framework.Container)
+	config := c.MustMake(contract.ConfigKey).(contract.Config)
+	baseURL := config.GetString(&quot;app.stsmap.url&quot;)
+	userID := config.GetString(&quot;app.stsmap.user_id&quot;)
+	token := config.GetString(&quot;app.stsmap.token&quot;)
+
+	logger := c.MustMake(contract.LogKey).(contract.Log)
+	return &amp;Service{baseURL: baseURL, logger: logger, userID: userID, token: token}, nil
+}
+
+</code></pre></div><h2 id="gocore-provider"><a href="#gocore-provider" class="header-anchor">#</a> gocore provider</h2> <p>gocore 框架默认自带了一些服务提供者，提供基础的服务接口协议，可以通过 <code>./gocore provider list</code> 来获取已经安装的服务提供者。</p> <div class="language- extra-class"><pre class="language-text"><code>[~/Documents/workspace/gocore_workspace]$ ./gocore provider list
+gocore:app
+gocore:env
+gocore:config
+gocore:log
+gocore:ssh
+gocore:kernel
+</code></pre></div><p>gocore 框架自带的服务提供者的 key 是以 <code>gocore:</code> 开头。目的为的是与自定义服务提供者的 key 区别开。</p> <p>gocore 框架自带的服务提供者具体定义的协议可以参考：<a href="/v1.0/provider/">provider</a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/v1.0/guide/swagger.html" class="prev">
+        swagger
+      </a></span> <span class="next"><a href="/v1.0/guide/todo.html">
+        待做事项
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/v1.0/assets/js/app.bbdd7f77.js" defer></script><script src="/v1.0/assets/js/2.58ac874f.js" defer></script><script src="/v1.0/assets/js/18.393b57eb.js" defer></script>
+  </body>
+</html>

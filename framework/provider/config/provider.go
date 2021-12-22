@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 )
 
-type GocoreConfigProvider struct {}
+type GocoreConfigProvider struct{}
 
 func (provider *GocoreConfigProvider) Register(c framework.Container) framework.NewInstance {
 	return NewGocoreConfig
@@ -23,7 +23,7 @@ func (provider *GocoreConfigProvider) IsDefer() bool {
 func (provider *GocoreConfigProvider) Params(c framework.Container) []interface{} {
 	appService := c.MustMake(contract.AppKey).(contract.App)
 	envService := c.MustMake(contract.EnvKey).(contract.Env)
-	env := envService.AppEnv()
+	env := envService.AppEnv() // 获取env中的APP_ENV
 	// 配置文件夹地址
 	configFolder := appService.ConfigFolder()
 	envFolder := filepath.Join(configFolder, env)

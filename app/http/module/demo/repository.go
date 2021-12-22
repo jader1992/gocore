@@ -10,7 +10,7 @@ func (r *Repository) GetUserIds() []int {
 	return []int{1, 2}
 }
 
-// 获取指定的用户
+// GetUserByIds 获取指定的用户
 func (r *Repository) GetUserByIds([]int) []UserModel {
 	return []UserModel{
 		{

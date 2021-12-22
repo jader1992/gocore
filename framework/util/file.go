@@ -2,7 +2,8 @@ package util
 
 import (
 	"io"
-	"io/ioutil"
+    "io/fs"
+    "io/ioutil"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -61,3 +62,33 @@ func DownloadFile(filepath string, url string) error {
 	_, err = io.Copy(out, resp.Body)
 	return err
 }
+
+// CopyFolder 将一个目录复制到另外一个目录中
+func CopyFolder(source, destination string) error {
+    var err error = filepath.Walk(source, func(path string, info fs.FileInfo, err error) error {
+        var realPath string = strings.Replace(path, source, "", 1)
+        if realPath == "" {
+            return nil
+        }
+        if info.IsDir() {
+            return os.Mkdir(filepath.Join(destination, realPath), 0755)
+        } else {
+            var data, err1 = ioutil.ReadFile(filepath.Join(source, realPath))
+            if err1 != nil {
+                return err1
+            }
+            return ioutil.WriteFile(filepath.Join(destination, realPath), data, 0777)
+        }
+    })
+    return err
+}
+
+// CopyFile 将一个文件拷贝到另外一个目录中
+func CopyFile(source, destination string) error  {
+    var data, err1 = ioutil.ReadFile(source)
+    if err1 != nil {
+        return err1
+    }
+    return ioutil.WriteFile(destination, data, 0777)
+}
+

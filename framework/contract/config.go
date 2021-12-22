@@ -37,7 +37,7 @@ type Config interface {
 	// GetStringSlice 获取一个string数组
 	GetStringSlice(key string) []string
 
-	// // GetStringMap 获取一个string为key，interface为val的map
+	// GetStringMap 获取一个string为key，interface为val的map
 	GetStringMap(key string) map[string]interface{}
 
 	// GetStringMapString 获取一个string为key，string为val的map

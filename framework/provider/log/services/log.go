@@ -20,7 +20,7 @@ type GocoreLog struct {
 	c          framework.Container // 容器
 }
 
-// sLevelEnable 判断这个级别是否可以打印
+// IsLevelEnable 判断这个级别是否可以打印
 func (log *GocoreLog) IsLevelEnable(level contract.LogLevel) bool {
 	return level <= log.level
 }
@@ -108,7 +108,7 @@ func (log *GocoreLog) SetLevel(level contract.LogLevel) {
 	log.level = level
 }
 
-// SetCxtFielder will get fields from context
+// SetCtxFielder will get fields from context
 func (log *GocoreLog) SetCtxFielder(handler contract.CtxFielder) {
 	log.ctxFielder = handler
 }

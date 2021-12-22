@@ -1,0 +1,16 @@
+timeout: 3s
+network: tcp
+web-01:
+    host: 111.222.333.444 # ip地址
+    port: 22 # 端口
+    username: root # 用户名
+    password: "123456" # 密码
+    rsa_key: "/Users/jade/.ssh/id_rsa"
+    known_hosts: "/Users/jade/.ssh/known_hosts"
+web-02:
+    network: tcp
+    host: localhost # ip地址
+    port: 3306 # 端口
+    username: root # 用户名
+    rsa_key: "/Users/jade/.ssh/id_rsa"
+    known_hosts: "/Users/jade/.ssh/known_hosts"

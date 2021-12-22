@@ -28,7 +28,7 @@ var providerCommand = &cobra.Command{
 	Short: "服务提供的相关命令",
 	RunE: func(c *cobra.Command, args []string) error {
 		if len(args) == 0 {
-			c.Help()
+			_ = c.Help()
 		}
 		return nil
 	},
@@ -112,7 +112,7 @@ var providerCreateCommand = &cobra.Command{
 		}
 
 		// 创建title这个模版方法
-		funcs := template.FuncMap{"title": strings.Title} // 自定义模版解析方法
+		funcHandle := template.FuncMap{"title": strings.Title} // 自定义模版解析方法
 
 		{
 			// 创建contract.go
@@ -123,7 +123,7 @@ var providerCreateCommand = &cobra.Command{
 			}
 
 			// 使用contractTmp模版来初始化template，并且让这个模版支持title方法，即支持{{.|title}}
-			t := template.Must(template.New("contract").Funcs(funcs).Parse(contractTmp))
+			t := template.Must(template.New("contract").Funcs(funcHandle).Parse(contractTmp))
 			// 将name传递进入到template中渲染，并且输出到contract.go 中
 			if err := t.Execute(f, name); err != nil {
 				return errors.Cause(err)
@@ -138,7 +138,7 @@ var providerCreateCommand = &cobra.Command{
 				return err
 			}
 
-			t := template.Must(template.New("privider").Funcs(funcs).Parse(providerTmp))
+			t := template.Must(template.New("provider").Funcs(funcHandle).Parse(providerTmp))
 			if err := t.Execute(f, name); err != nil {
 				return err
 			}
@@ -152,7 +152,7 @@ var providerCreateCommand = &cobra.Command{
 				return err
 			}
 
-			t := template.Must(template.New("service").Funcs(funcs).Parse(serviceTmp))
+			t := template.Must(template.New("service").Funcs(funcHandle).Parse(serviceTmp))
 			if err := t.Execute(f, name); err != nil {
 				return err
 			}

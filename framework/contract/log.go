@@ -11,7 +11,7 @@ const LogKey = "gocore:log"
 type LogLevel uint32
 
 const (
-	// UnkonwnLevel 表示未知的日志级别
+	// UnknownLevel 表示未知的日志级别
 	UnknownLevel LogLevel = iota
 	// PanicLevel level, panic 表示会导致整个程序出现崩溃的日志信息
 	PanicLevel

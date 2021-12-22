@@ -9,13 +9,17 @@ import (
 )
 
 func TestGocoreConfig_GetInt(t *testing.T) {
+    container := tests.InitBaseContainer()
 	Convey("test hade env normal case", t, func() {
-		basePath := tests.BASE_PATH
-		folder := filepath.Join(basePath, "config")
-		serv, err := NewGocoreConfig(folder, map[string]string{}, contract.ConfigKey)
+		appService := container.MustMake(contract.AppKey).(contract.App)
+        envService := container.MustMake(contract.EnvKey).(contract.Env)
+		folder := filepath.Join(appService.ConfigFolder(), envService.AppEnv())
+
+		serv, err := NewGocoreConfig(container, folder, map[string]string{})
+
 		So(err, ShouldBeNil)
 		conf := serv.(*GocoreConfig)
-		timeout := conf.GetInt("database.mysql.timeout")
-		So(timeout, ShouldEqual, 1)
+		timeout := conf.GetString("database.default.timeout")
+		So(timeout, ShouldEqual, "10s")
 	})
 }

@@ -34,7 +34,7 @@ var envListCommmand = &cobra.Command{
 		container := c.GetContainer()
 		envService := container.MustMake(contract.EnvKey).(contract.Env)
 		envs := envService.All()
-		outs := [][]string{}
+		var outs [][]string
 		for k, v := range envs {
 			outs = append(outs, []string{k, v})
 		}

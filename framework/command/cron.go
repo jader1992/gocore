@@ -32,7 +32,7 @@ var cronCommand = &cobra.Command{
 	Short: "定时任务相关命令",
 	RunE: func(c *cobra.Command, args []string) error {
 		if len(args) == 0 {
-			c.Help()
+			_ = c.Help()
 		}
 		return nil
 	},
@@ -80,7 +80,7 @@ var cronStartCommand = &cobra.Command{
 				Args:        []string{"", "cron", "start", "--daemon=true"},
 			}
 			// 在给定的上下文中运行当前进程的第二个副本
-			d, err := cntxt.Reborn()  // Reborn 方法启动一个子进程
+			d, err := cntxt.Reborn() // Reborn 方法启动一个子进程
 
 			if err != nil {
 				return err
@@ -93,7 +93,9 @@ var cronStartCommand = &cobra.Command{
 			}
 
 			// 释放守护进程
-			defer cntxt.Release()
+			defer func(cntxt *daemon.Context) {
+				_ = cntxt.Release()
+			}(cntxt)
 			fmt.Println("deemon started")
 			// 设置进程的名字
 			gspt.SetProcTitle("gocore cron")

@@ -172,7 +172,7 @@ func New() *Engine {
 			root:     true,
 		},
 		// 这里注入了contaner，
-		container: framework.NewHadeContainer(),
+		container: framework.NewGocoreContainer(),
 		FuncMap:                template.FuncMap{},
 		RedirectTrailingSlash:  true,
 		RedirectFixedPath:      false,

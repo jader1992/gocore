@@ -28,7 +28,7 @@ var buildCommand = &cobra.Command{
 	Short: "编译相关命令",
 	RunE: func(c *cobra.Command, args []string) error {
 		if len(args) == 0 {
-			c.Help()
+			_ = c.Help()
 		}
 		return nil
 	},

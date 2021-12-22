@@ -95,6 +95,13 @@ func (app GocoreApp) TestFolder() string {
 	return filepath.Join(app.BaseFolder(), "test")
 }
 
+func (app GocoreApp) DeployFolder() string {
+    if val, ok := app.configMap["deploy_folder"]; ok {
+        return val
+    }
+    return filepath.Join(app.BaseFolder(), "deploy")
+}
+
 // ProviderFolder 定义业务自己的服务提供者地址
 func (app GocoreApp) ProviderFolder() string {
 	if val, ok := app.configMap["provider_folder"]; ok {
@@ -103,7 +110,7 @@ func (app GocoreApp) ProviderFolder() string {
 	return filepath.Join(app.BaseFolder(), "app", "provider")
 }
 
-// AppID 表示这个App的唯一ID
+// AppId 表示这个App的唯一ID
 func (app GocoreApp) AppId() string {
 	return app.appId
 }

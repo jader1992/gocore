@@ -3,7 +3,7 @@ package contract
 const (
 	// EnvProduction 代表生产环境
 	EnvProduction = "production"
-	// ENV_TESTING 代表测试环境
+	// EnvTesting 代表测试环境
 	EnvTesting = "testing"
 	// EnvDevelopment 代表开发环境
 	EnvDevelopment = "development"
